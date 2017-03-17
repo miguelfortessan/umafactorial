@@ -1,0 +1,73 @@
+// Clonación del repositorio alojado en Github
+$ git clone https://github.com/miguelfortessan/umafactorial.git
+//Inicio de sesión y configuracion de usuario
+
+$ git config --global user.name "miguelfortessan"
+$ git config --global user.email miguelfortes@uma.es
+//Eleccion de la ruta donde está el directorio
+$ cd umafactorial
+//Creación del fichero de trabajo
+
+$ touch factorial.doc
+
+// Una vez modificado el fichero, añadimos y guardamos con el commit
+$ git add factorial.doc
+$ git commit -m "Implementacion inicial"
+
+
+// Se ha modificado el fichero para refactorizarlo, por lo que se guarda de nuevo
+$ git add factorial.doc
+$ git commit -m "Refactorizacion"
+
+
+//Se sube a Github
+
+$ git push origin master
+<Introducimos usuario y  contraseña>
+//Se crea la rama recurviso y se cambia directamente a ella
+
+$ git checkout -b recursivo
+
+// Se añade el fichero a la rama recursivo una vez modificado
+$ git add factorial.doc
+$ git commit -m "Implementacion recursiva "
+
+// Se sube la rama recursivo a Github 
+$ git push origin recursivo
+
+
+//Cambiamosa  la rama master
+$ git checkout master
+//Añadimos modificacion
+$ git commit -m "correcion numeros negativos"
+//Mezclamos las samas con merge 
+$ git push origin master
+$ git checkout recursivo
+$ git add factorial.doc
+$ git commit -m "optimizacion"
+$ git checkout master
+$ git merge recursivo
+
+//Se crea una nueva rama y se crea el espacio de trabajo en ella
+$ git checkout -b refcIO
+$ git add factorial.doc
+//Hacemos commit  y refactorizamos la salida a otro método
+$ git commit -m "refactorizacion de metodo de entrada"
+// Guardamos temporalmente con stash
+$ git  stash
+//Volvemos a la rama master
+$ git checkout master
+$ git add factorial.doc
+$ git commit -m "cambio de long a biginterger"
+$  git stash pop
+$ git add factorial.doc
+$ git commit -m "refactorizacion de metodos de salida"
+$ git checkout master
+$ git merge refcIO
+$ git add factorial.doc
+$ git commit -m "mezcla de rama refacIO"
+
+
+
+
+
